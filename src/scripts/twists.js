@@ -49,8 +49,14 @@ ERNO.Twist.prototype.set = function( command, degrees ){
 		Z: 'Cube on Z',
 		F: 'Front face',
 		S: 'Standing slice',
-		B: 'Back face'
+		B: 'Back face',
 
+		A: 'Double Left face',
+		C: 'Double Right face',
+		G: 'Double Up face',
+		H: 'Double Down face',
+		I: 'Double Front face',
+		J: 'Double Back face'
 	}[ command.toUpperCase() ];
 
 
@@ -184,7 +190,7 @@ ERNO.Twist.validate = function(){
 				//  cube.twist( 'UdrLf' )
 				//  cube.twist( 'Udr10Lf-30b' )
 				
-				pattern = /(-?\d+|[XLMRYUEDZFSB])/gi;
+				pattern = /(-?\d+|[XLMRYUEDZFSBTACGHIJ])/gi;
 				matches = element.match( pattern );
 				for( m = 0; m < matches.length; m ++ ){
 

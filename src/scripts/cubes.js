@@ -311,6 +311,28 @@ ERNO.Cube = function( parameters ){
 	this.right.neighbour = this.middle;
 	this.left.neighbour = this.middle;
 
+    this.dleft = new ERNO.Slice(
+
+        [ 24, 21, 18,
+            15, 12,  9,
+            6,  3,  0,
+			25, 22, 19,
+            16, 13, 10,
+            7,  4,  1], this
+
+    )
+    this.dleft.name = 'doubleleft';
+    this.dright = new ERNO.Slice(
+
+        [ 2, 11, 20,
+            5, 14, 23,
+            8, 17, 26,
+			25, 22, 19,
+            16, 13, 10,
+            7,  4,  1], this
+
+    )
+    this.dright.name = 'doubleright';
 
 	//  Slices that can rotate about the Y-axis:
 
@@ -341,6 +363,29 @@ ERNO.Cube = function( parameters ){
 	this.down.neighbour = this.equator;
 	this.up.neighbour = this.equator;
 
+    this.dup = new ERNO.Slice(
+
+        [ 18, 19, 20,
+            9, 10, 11,
+            0,  1,  2,
+			21, 22, 23,
+            12, 13, 14,
+            3,  4,  5], this
+
+    )
+    this.dup.name = 'doubleup';
+    this.ddown = new ERNO.Slice(
+
+        [ 8, 17, 26,
+            7, 16, 25,
+            6, 15, 24,
+			21, 22, 23,
+            12, 13, 14,
+            3,  4,  5], this
+
+    )
+    this.ddown.name = 'doubledown';
+
 	//  These are Slices that can rotate about the Z-axis:
 	this.front = new ERNO.Slice(
 
@@ -369,6 +414,28 @@ ERNO.Cube = function( parameters ){
 	this.back.neighbour = this.standing;
 	this.front.neighbour = this.standing;
 
+    this.dfront = new ERNO.Slice(
+
+        [  0,  1,  2,
+            3,  4,  5,
+            6,  7,  8,
+			9, 10, 11,
+            12, 13, 14,
+            15, 16, 17], this
+
+    )
+    this.dfront.name = 'doublefront';
+    this.dback = new ERNO.Slice(
+
+        [ 26, 23, 20,
+            25, 22, 19,
+            24, 21, 18,
+			9, 10, 11,
+            12, 13, 14,
+            15, 16, 17], this
+
+    )
+    this.dback.name = 'doubleback';
 
 	//  Faces .... special kind of Slice!
 
@@ -408,6 +475,13 @@ ERNO.Cube = function( parameters ){
 		'r': this.right,
 		'm': this.middle,
 		'l': this.left,
+
+        'a': this.dleft,
+        'c': this.dright,
+        'g': this.dup,
+        'h': this.ddown,
+        'i': this.dfront,
+        'j': this.dback,
 
 		//	Here we defined some arbitrary groups.
 		//	Technically they're not really slices in the usual sense,
@@ -538,7 +612,7 @@ ERNO.Cube = function( parameters ){
 			this.keyboardControlsEnabled ){
 
 				var key = String.fromCharCode( event.which );
-				if( 'XxRrMmLlYyUuEeDdZzFfSsBb'.indexOf( key ) >= 0 ) this.twist( key );
+				if( 'XxRrMmLlYyUuEeDdZzFfSsBbAaCcGgHhIiJj'.indexOf( key ) >= 0 ) this.twist( key );
 
 		}
 	}.bind( this ));
