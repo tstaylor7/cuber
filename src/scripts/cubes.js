@@ -213,7 +213,7 @@ ERNO.Cube = function( parameters ){
 	//  so that's going to be 27 Cubelets in total to create a Cube.
 
 	this.cubelets = [];
-	([
+	(parameters.cubeletColorMap === undefined ? [
 
 		//  Front slice
 
@@ -235,8 +235,7 @@ ERNO.Cube = function( parameters ){
 		[  ,  ,  ,  , G, Y ],    [  ,  ,  ,  ,  , Y ],    [  ,  , B,  ,  , Y ],//  21, 22, 23
 		[  ,  ,  , R, G, Y ],    [  ,  ,  , R,  , Y ],    [  ,  , B, R,  , Y ] //  24, 25, 26
 
-	]).forEach( function( cubeletColorMap, cubeletId ){
-
+	] : parameters.cubeletColorMap).forEach( function( cubeletColorMap, cubeletId ) {
 		this.cubelets.push( new ERNO.Cubelet( this, cubeletId, cubeletColorMap ));
 
 	}.bind( this ));
