@@ -80,6 +80,12 @@ ERNO.extend( String.prototype, {
 		}
 		return s;
 	},
+	splice : function(){
+
+        var ar = this.split('');
+        Array.prototype.splice.apply(ar, arguments);
+        return ar.join('');
+	},
 	size : function(){
 
 		return this.length;

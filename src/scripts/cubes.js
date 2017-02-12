@@ -544,6 +544,7 @@ ERNO.Cube = function( parameters ){
 	//	and in what direction.
 
 	this.mouseInteraction = new ERNO.Interaction( this, this.camera, this.domElement );
+	this.mouseInteraction.enabled = this.mouseControlsEnabled;
 
 
 	this.mouseInteraction.addEventListener( 'click', function( evt ){
@@ -560,6 +561,7 @@ ERNO.Cube = function( parameters ){
 	//	You could override this with a different style of control
 
 	this.controls = new ( parameters.controls || ERNO.Controls )( this, this.camera, this.domElement );
+	this.controls.enabled = this.mouseControlsEnabled;
 
 
 
@@ -919,18 +921,16 @@ ERNO.extend( ERNO.Cube.prototype, {
 		return function(){
 
 
-			requestAnimationFrame( this.loop );
-
-
-			//	Kick off the next animation frame
-
-			var localTime = ( typeof window !== 'undefined' && window.performance !== undefined && window.performance.now !== undefined ? window.performance.now() : Date.now() );
-			var frameDelta = localTime - ( time || localTime );
-			time = localTime;
-
-
 			if( !this.paused ){
 
+				requestAnimationFrame( this.loop );
+
+
+				//	Kick off the next animation frame
+
+				var localTime = ( typeof window !== 'undefined' && window.performance !== undefined && window.performance.now !== undefined ? window.performance.now() : Date.now() );
+				var frameDelta = localTime - ( time || localTime );
+				time = localTime;
 
 
 				//	Update the internal animation frame
@@ -1032,5 +1032,12 @@ ERNO.extend( ERNO.Cube.prototype, {
 
 			}
 		}
-	}())
+	}()),
+	pause: function() {
+		this.paused = true;
+	},
+	resume: function() {
+		this.paused = false;
+		requestAnimationFrame(this.loop);
+	}
 })

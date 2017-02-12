@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/png" href="../../src/media/cuber-favicon-0064x0064.png">
+		<link rel="apple-touch-icon" href="../../src/media/cuber-favicon-0144x0144.png">
+
+		<title>Cuber</title>
+
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+		<link rel="stylesheet" type="text/css" href="../../src/styles/cube.min.css">
+		<link rel="stylesheet" type="text/css" href="styles/solutions.css">
+
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+		<script src="https://cdn.rawgit.com/mrdoob/three.js/r84/examples/js/renderers/CSS3DRenderer.js"></script>
+
+		<script src="../../src/scripts/ERNO.js"></script>
+		<script src="../../src/scripts/utils/utils.js"></script>
+		<script src="../../src/scripts/utils/Number.js"></script>
+		<script src="../../src/scripts/utils/String.js"></script>
+		<script src="../../src/scripts/utils/Array.js"></script>
+		<script src="../../src/scripts/colors.js"></script>
+		<script src="../../src/scripts/directions.js"></script>
+		<script src="../../src/scripts/queues.js"></script>
+		<script src="../../src/scripts/twists.js"></script>
+		<script src="../../src/scripts/cubelets.js"></script>
+		<script src="../../src/scripts/groups.js"></script>
+		<script src="../../src/scripts/slices.js"></script>
+		<script src="../../src/scripts/folds.js"></script>
+		<script src="../../src/scripts/projector.js"></script>
+		<script src="../../src/scripts/interaction.js"></script>
+		<script src="../../src/scripts/controls.js"></script>
+		<script src="../../src/scripts/cubes.js"></script>
+		<script src="../../src/scripts/solvers.js"></script>
+		<script src="../../src/scripts/renderer.js"></script>
+
+		<script src="scripts/solutions.js"></script>
+	</head>
+	<body>
+		<div class="cubes">
+			<div class="container container-1"></div>
+			<div class="container container-2"></div>
+		</div>
+		<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<div class="container"></div>
+						<div class="solution"></div>
+						<div class="btn-group" role="group">
+							<button id="modal-reset" type="button" class="btn btn-secondary" aria-label="Reset" disabled="disabled">
+								<span class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+							</button>
+							<button id="modal-play" type="button" class="btn btn-primary" aria-label="Play">
+								<span class="glyphicon glyphicon-play" aria-hidden="true"></span>
+							</button>
+							<button id="modal-step" type="button" class="btn btn-secondary" aria-label="Step">
+								<span class="glyphicon glyphicon-step-forward" aria-hidden="true"></span>
+							</button>
+							<button id="modal-rotate" type="button" class="btn btn-secondary" aria-label="Rotate">
+								<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,28 @@
+.container {
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+#modal .container {
+    float: none;
+    width: 300px;
+    height: 300px;
+}
+
+#modal .solution {
+    text-align: center;
+    padding: 15px;
+}
+
+#modal .modal-body {
+    text-align: center;
+}
+
+#modal .solution .step.active {
+    font-weight: bold;
+}
+
+#modal .solution .twist.active {
+    font-style: italic;
+}
