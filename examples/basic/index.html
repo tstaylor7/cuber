@@ -2,14 +2,18 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"/>
 		<meta name="description" content="Rubik’s Cube">
 		<meta name="keywords" content="Erno Rubik’s Cube">
 
 
 
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../../src/styles/base.css" />
 		<link rel="stylesheet" type="text/css" href="../../src/styles/cube.css">
 		<link rel="stylesheet" type="text/css" href="styles/base.css">
+
 		<link rel="icon" type="image/png" href="../../src/media/cuber-favicon-0064x0064.png">
 		<link rel="apple-touch-icon" href="../../src/media/cuber-favicon-0144x0144.png">
 
@@ -60,7 +64,7 @@
 
 
 
-		<!-- implementation -->	
+		<!-- implementation -->
 
 
 		<script charset="utf-8" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -68,17 +72,42 @@
 		<script charset="utf-8" src="../../src/scripts/extras/renderers/ierenderer.js"></script>
 		<script charset="utf-8" src="../../src/scripts/extras/controls/locked.js"></script>
 		<script charset="utf-8" src="../../src/scripts/extras/deviceMotion.js"></script>
-		<script charset="utf-8" src="scripts/main.js"></script>		
+		<script charset="utf-8" src="scripts/main.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
 
 	</head>
-	<body class="graydient" >
-		<div id="container" ></div>
-		<div id="fail">
-			<h1>Sorry,</h1>
-			<h2>Cubers broken</h2>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="https://github.com/tstaylor7/cuber">Cuber</a>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 col-md-2 sidebar">
+					<ul class="nav nav-sidebar">
+						<li><span>Examples</span></li>
+						<li class="active"><a href="./">Basic <span class="sr-only">(current)</span></a></li>
+						<li><a href="../solutions/">Solutions/Modal</a></li>
+					</ul>
+				</div>
+
+				<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+					<h1 class="page-header">Basic Example</h1>
+					<div class="flex-filled">
+						<div id="container" class="graydient"></div>
+						<div id="fail">
+							<h1>Sorry,</h1>
+							<h2>Cubers broken</h2>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
-		
 	</body>
 </html>
