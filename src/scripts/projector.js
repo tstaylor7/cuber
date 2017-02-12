@@ -62,7 +62,7 @@ ERNO.Projector = (function(){
 
 			projectionMatrixInverse.getInverse( camera.projectionMatrix );
 			viewProjectionMatrix.multiplyMatrices( camera.matrixWorld, projectionMatrixInverse );
-			return vector.applyProjection( viewProjectionMatrix );
+			return vector.applyMatrix4( viewProjectionMatrix );
 
 		}
 
@@ -179,7 +179,7 @@ ERNO.Projector = (function(){
 				//	Check ray casting against the bounding sphere first as it's easier to compute, 
 				//	if it passes, then check the Axis Aligned Bounding Box.
 				
-				if( ray.isIntersectionSphere( sphere ) &&
+				if( ray.intersectsSphere( sphere ) &&
 					ray.intersectBox( box, intersection ) !== null ){
 
 					if( optionalPlaneTarget ){

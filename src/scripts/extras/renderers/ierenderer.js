@@ -138,8 +138,8 @@ ERNO.IeCss3DRenderer = function ( cube ) {
 
 			viewProjectionMatrix.multiplyMatrices( camera.projectionMatrix, camera.matrixWorldInverse );
 
-			return vector.applyProjection( viewProjectionMatrix );
-			// return vector;//.applyProjection( viewProjectionMatrix );
+			return vector.applyMatrix4( viewProjectionMatrix );
+			// return vector;//.applyMatrix4( viewProjectionMatrix );
 
 		}
 

@@ -48,8 +48,10 @@ ERNO.Interaction = (function(){
 
 		// API
 
+		var api = {};
 
-		var api = {
+		// Apply event skills to the api
+		Object.assign(api, THREE.EventDispatcher.prototype, {
 
 
 			//	A boolean indicating when the user is interacting
@@ -71,10 +73,7 @@ ERNO.Interaction = (function(){
 			//	This sets the default drag speed.
 			dragSpeed : dragSpeed || 1.3
 
-		}
-
-		// Apply event skills to the api
-		THREE.EventDispatcher.prototype.apply( api );
+		});
 
 
 
@@ -114,7 +113,7 @@ ERNO.Interaction = (function(){
 
 				viewProjectionMatrix.multiplyMatrices( camera.projectionMatrix, camera.matrixWorldInverse );
 
-				return vector.applyProjection( viewProjectionMatrix );
+				return vector.applyMatrix4( viewProjectionMatrix );
 
 			}
 
@@ -385,7 +384,11 @@ ERNO.Interaction = (function(){
 		
 			var intersection = this.getIntersectionAt( x, y );
 			if( intersection ){
-				this.dispatchEvent( new CustomEvent("click", { detail: intersection  }));
+				this.dispatchEvent({
+					type: "click",
+					cubelet: intersection.cubelet,
+					face: intersection.face
+				});
 				return true;
 			}
 			return false;

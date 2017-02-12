@@ -381,7 +381,10 @@ ERNO.Cube = function( parameters ){
 
 	// 	We also probably want a handle on any update events that occur, for example, when a slice is rotated
 	var onSliceRotated = function( evt ){
-		this.dispatchEvent( new CustomEvent( 'onTwistComplete', {detail: { slice : evt.target }}));
+		this.dispatchEvent({
+			type: 'onTwistComplete',
+			slice : evt.target
+		});
 	}.bind( this );
 
 	this.slices.forEach( function( slice ){
@@ -471,9 +474,11 @@ ERNO.Cube = function( parameters ){
 
 
 	this.mouseInteraction.addEventListener( 'click', function( evt ){
-
-		this.dispatchEvent( new CustomEvent("click", { detail: evt.detail  }));
-
+		this.dispatchEvent({
+			type: "click",
+			cubelet: evt.cubelet,
+			face: evt.face
+		});
 	}.bind( this ));
 
 
@@ -742,12 +747,11 @@ ERNO.extend( ERNO.Cube.prototype, {
 
 
 				// Also, since everythings changed, we might aswell tell everyone
-			 	this.dispatchEvent( new CustomEvent( 'onTwistComplete', { detail: {
-
+				this.dispatchEvent({
+					type: 'onTwistComplete',
 					slice : slice,
 					twist : twist
-
-				}}));
+				});
 			}
 
 
@@ -757,13 +761,11 @@ ERNO.extend( ERNO.Cube.prototype, {
 
 				this.finalShuffle = null;
 
-			 	this.dispatchEvent( new CustomEvent( 'onShuffleComplete', { detail: {
-
+				this.dispatchEvent({
+					type: 'onShuffleComplete',
 					slice : slice,
 					twist : twist
-
-				}}));
-
+				});
 			}
 
 

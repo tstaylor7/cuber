@@ -174,11 +174,11 @@ ERNO.renderers.CSS3DCubelet = (function(){
 
 		var domElement = document.createElement( 'div' );
 		domElement.classList.add( 'cubelet' );
-		domElement.classList.add( 'cubeletId-'+ cubelet.id );
+		domElement.classList.add( 'cubeletId-'+ cubelet.cubeletId );
 		cubelet.css3DObject = new THREE.CSS3DObject( domElement );
 
 		
-		cubelet.css3DObject.name = 'css3DObject-' + cubelet.id;
+		cubelet.css3DObject.name = 'css3DObject-' + cubelet.cubeletId;
 		cubelet.add( cubelet.css3DObject );
 
 
@@ -244,7 +244,7 @@ ERNO.renderers.CSS3DCubelet = (function(){
 			
 			var underlineElement = document.createElement( 'span' );
 			underlineElement.classList.add( 'underline' );
-			underlineElement.innerText = cubelet.id;
+			underlineElement.innerText = cubelet.cubeletId;
 			idElement.appendChild( underlineElement );
 
 

@@ -56,7 +56,7 @@
 
 
 
-ERNO.Cubelet = function( cube, id, colors ){
+ERNO.Cubelet = function( cube, cubeletId, colors ){
 
 
 	THREE.Object3D.call( this );
@@ -74,7 +74,7 @@ ERNO.Cubelet = function( cube, id, colors ){
 	//  we need an ID number for later below
 	//  when we derive positions and rotations for the Cubelet faces.
 
-	this.id = id || 0;
+	this.cubeletId = cubeletId || 0;
 
 
 	//  Our Cubelet's address is its current location on the Cube.
@@ -82,7 +82,7 @@ ERNO.Cubelet = function( cube, id, colors ){
 	//  This method will also set the X, Y, and Z components of the
 	//  Cubelet's address on the Cube.
 
-	this.setAddress( this.id );
+	this.setAddress( this.cubeletId );
 
 
 	//  We're going to build Cubelets that are 140 pixels square.
@@ -116,11 +116,11 @@ ERNO.Cubelet = function( cube, id, colors ){
 
 	// var domElement = document.createElement( 'div' );
 	// domElement.classList.add( 'cubelet' );
-	// domElement.classList.add( 'cubeletId-'+ this.id );
+	// domElement.classList.add( 'cubeletId-'+ this.cubeletId );
 	// this.css3DObject = new THREE.CSS3DObject( domElement );
 
 	
-	// this.css3DObject.name = 'css3DObject-' + this.id;
+	// this.css3DObject.name = 'css3DObject-' + this.cubeletId;
 	// this.add( this.css3DObject );
 
 
