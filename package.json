@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "uglify-js": "^2.7.5",
+    "uglifycss": "^0.0.25"
+  },
+  "scripts": {
+    "build": "node catmin.js"
+  }
+}
