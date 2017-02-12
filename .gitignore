@@ -1,0 +1,4 @@
+.idea/
+build/
+*.min.js
+*.min.css
