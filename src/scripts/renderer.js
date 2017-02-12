@@ -109,6 +109,17 @@ ERNO.renderers.CSS3D = function( cubelets, cube ){
 
 	
 
+	function preserve3d(object) {
+		if( object instanceof THREE.CSS3DObject ) {
+			object.element.style.WebkitTransformStyle = 'preserve-3d';
+			object.element.style.MozTransformStyle = 'preserve-3d';
+			object.element.style.oTransformStyle = 'preserve-3d';
+			object.element.style.transformStyle = 'preserve-3d';
+		}
+		for ( var i = 0, l = object.children.length; i < l; i ++ ) {
+			preserve3d( object.children[ i ] );
+		}
+	}
 
 	// RENDER LOOP
 
@@ -124,6 +135,7 @@ ERNO.renderers.CSS3D = function( cubelets, cube ){
 				cube.domElement.clientHeight !== parentHeight )){
 				
 					cube.setSize( parentWidth, parentHeight );
+					preserve3d(scene);
 
 			}
 
