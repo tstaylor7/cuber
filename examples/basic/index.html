@@ -7,76 +7,34 @@
 		<meta name="description" content="Rubik’s Cube">
 		<meta name="keywords" content="Erno Rubik’s Cube">
 
-
-
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-		<link rel="stylesheet" type="text/css" href="../../src/styles/base.css" />
-		<link rel="stylesheet" type="text/css" href="../../src/styles/cube.css">
+		<link rel="stylesheet" type="text/css" href="../../styles/base.css" />
+		<link rel="stylesheet" type="text/css" href="../../build/styles/cube.css">
 		<link rel="stylesheet" type="text/css" href="styles/base.css">
 
-		<link rel="icon" type="image/png" href="../../src/media/cuber-favicon-0064x0064.png">
-		<link rel="apple-touch-icon" href="../../src/media/cuber-favicon-0144x0144.png">
-
+		<link rel="icon" type="image/png" href="../../build/media/cuber-favicon-0064x0064.png">
+		<link rel="apple-touch-icon" href="../../build/media/cuber-favicon-0144x0144.png">
 
 		<title>Cuber Basic Example</title>
 
-
-
-		<!-- compiled cube code -->	
-		<!-- <script charset="utf-8" src="build/cuber.js"></script> -->
-
-		<!-- compiled & minified cube code -->	
-		<!-- <script charset="utf-8" src="build/cuber.min.js"></script> -->
-
-
+		<!--  Three.js  -->
+		<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
+		<script charset="utf-8" src="https://cdn.rawgit.com/mrdoob/three.js/r84/examples/js/renderers/CSS3DRenderer.js"></script>
 
 		<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
 
-
-		<!-- cube source code -->
-
-
-			<!--  Three.js  -->
-			<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
-
-
-			<!--  Here are the Cube guts. Enjoy.  -->
-			<script charset="utf-8" src="../../src/scripts/ERNO.js"></script>
-			<script charset="utf-8" src="https://cdn.rawgit.com/mrdoob/three.js/r84/examples/js/renderers/CSS3DRenderer.js"></script>
-			<script charset="utf-8" src="../../src/scripts/utils/utils.js"></script>
-			<script charset="utf-8" src="../../src/scripts/utils/Number.js"></script>
-			<script charset="utf-8" src="../../src/scripts/utils/String.js"></script>
-			<script charset="utf-8" src="../../src/scripts/utils/Array.js"></script>
-			<script charset="utf-8" src="../../src/scripts/colors.js"></script>
-			<script charset="utf-8" src="../../src/scripts/directions.js"></script>
-			<script charset="utf-8" src="../../src/scripts/queues.js"></script>
-			<script charset="utf-8" src="../../src/scripts/twists.js"></script>
-			<script charset="utf-8" src="../../src/scripts/cubelets.js"></script>
-			<script charset="utf-8" src="../../src/scripts/groups.js"></script>
-			<script charset="utf-8" src="../../src/scripts/slices.js"></script>
-			<script charset="utf-8" src="../../src/scripts/folds.js"></script>
-			<script charset="utf-8" src="../../src/scripts/projector.js"></script>
-			<script charset="utf-8" src="../../src/scripts/interaction.js"></script>
-			<script charset="utf-8" src="../../src/scripts/controls.js"></script>
-			<script charset="utf-8" src="../../src/scripts/cubes.js"></script>
-			<script charset="utf-8" src="../../src/scripts/solvers.js"></script>
-			<script charset="utf-8" src="../../src/scripts/renderer.js"></script>
-
-
-
-		<!-- implementation -->
-
+		<!-- compiled & minified cube code -->
+		<script charset="utf-8" src="../../build/cuber.min.js"></script>
 
 		<script charset="utf-8" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-		<script charset="utf-8" src="../../src/scripts/extras/renderers/iecss3d.js"></script>
-		<script charset="utf-8" src="../../src/scripts/extras/renderers/ierenderer.js"></script>
-		<script charset="utf-8" src="../../src/scripts/extras/controls/locked.js"></script>
-		<script charset="utf-8" src="../../src/scripts/extras/deviceMotion.js"></script>
-		<script charset="utf-8" src="scripts/main.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-
+		<!-- implementation -->
+		<script charset="utf-8" src="scripts/extras/renderers/iecss3d.js"></script>
+		<script charset="utf-8" src="scripts/extras/renderers/ierenderer.js"></script>
+		<script charset="utf-8" src="scripts/extras/controls/locked.js"></script>
+		<script charset="utf-8" src="scripts/extras/deviceMotion.js"></script>
+		<script charset="utf-8" src="scripts/main.js"></script>
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
