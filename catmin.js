@@ -45,4 +45,6 @@ fs.readdirSync('src/media').forEach(function (file) {
     fs.writeFileSync('build/media/' + file, fs.readFileSync('src/media/' + file));
 });
 
+fs.writeFileSync('build/LICENSE', fs.readFileSync('LICENSE'));
+
 console.log('Done.');
